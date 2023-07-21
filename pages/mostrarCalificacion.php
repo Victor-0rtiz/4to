@@ -81,8 +81,8 @@ include_once "../server/zona_priv.php"; ?>
                                                 <td><?php echo $dat['NSS'] ?></td>
                                                 <td><?php echo $dat['NF'] ?></td>
                                                 <td>
-                                                    <button class="btn-primary" data-toggle="modal" data-target="#modalEditar">Editar</button>
-                                                    <button class="btn-danger btnBorrarCali" data-id="<?php echo $dat['idCalificacione'] ?>">Eliminar</button>
+                                                    <button class="btn-primary" data-toggle="modal" data-id="<?php echo $dat['id'] ?>" data-target="#modalEditar">Editar</button>
+                                                    <button class="btn-danger btnBorrarCali" data-id="<?php echo $dat['id'] ?>">Eliminar</button>
                                                 </td>
                                             </tr>
 
