@@ -313,6 +313,7 @@
 
 
   function llenarDatos() {
+    console.log("hola");
     $.ajax({
       url: "../server/selec_docente.php",
       type: "POST",

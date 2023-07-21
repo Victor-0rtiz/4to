@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     
 
-    $consulta = $conexionbd->consultar("INSERT INTO docente(inss, Usuario_idUsuario) values( '". $_POST["inss"]. "' , '". $_POST["Usuario_idUsuario"]. "') ;");
+    $consulta = $conexionbd->consultar("INSERT INTO docente(inns, Usuario_idUsuario) values( '". $_POST["inss"]. "' , '". $_POST["Usuario_idUsuario"]. "') ;");
 
     if ($consulta) {
         header("location: /");
