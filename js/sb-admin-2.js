@@ -272,4 +272,113 @@
     });
   });
 
+
+
+  $("#btnNuevo").click(function () {
+    // Obtén el valor seleccionado del select
+
+
+    // Realiza la consulta AJAX
+    $.ajax({
+      url: "../server/selec_asignatura.php",
+      type: "POST",
+      data: { opcion: 1 }, // Puedes enviar el valor seleccionado como parámetro a tu consulta
+      success: function (response) {
+
+        const opciones = JSON.parse(response);
+        const select = document.querySelector("#Calificacion_Asignatura");
+
+
+
+        opciones.forEach(opcion => {
+
+          const optionElement = document.createElement("option");
+          
+          optionElement.value = opcion.idAsignatura; // Asigna el valor del id
+          optionElement.text = opcion.NombreAsignatura;  // Asigna el texto del nombre
+          
+          select.appendChild(optionElement);
+
+          select.addEventListener("change", llenarDatos);
+
+        });
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        // Maneja los errores aquí
+        console.error("Error en la consulta AJAX: " + textStatus + " - " + errorThrown);
+      }
+    });
+  });
+
+
+  function llenarDatos() {
+    $.ajax({
+      url: "../server/selec_docente.php",
+      type: "POST",
+      data: { opcion: 1 }, // Puedes enviar el valor seleccionado como parámetro a tu consulta
+      success: function (response) {
+
+        const opciones = JSON.parse(response);
+
+
+        const select = document.querySelector("#Calificacion_Docente");
+
+
+        
+
+        opciones.forEach(opcion => {
+          const optionElement = document.createElement("option");
+          
+          optionElement.value = opcion.idUsuario; // Asigna el valor del id
+          optionElement.text = opcion.Pnombre;
+          
+          select.appendChild(optionElement);
+
+          select.addEventListener("change", llenarEstdiantes)
+
+        });
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        // Maneja los errores aquí
+        console.error("Error en la consulta AJAX: " + textStatus + " - " + errorThrown);
+      }
+    });
+  }
+
+  function llenarEstdiantes() {
+    $.ajax({
+      url: "../server/selec_estudiante.php",
+      type: "POST",
+      data: { opcion: 1 }, // Puedes enviar el valor seleccionado como parámetro a tu consulta
+      success: function (response) {
+
+        const opciones = JSON.parse(response);
+
+
+        const select = document.querySelector("#Calificacion_Estudiante");
+
+
+        
+
+        opciones.forEach(opcion => {
+          const optionElement = document.createElement("option");
+          
+          optionElement.value = opcion.id; // Asigna el valor del id
+          optionElement.text = opcion.nombre +" "+ opcion.apellido;  // Asigna el texto del nombre
+          
+          select.appendChild(optionElement);
+
+
+        });
+
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        // Maneja los errores aquí
+        console.error("Error en la consulta AJAX: " + textStatus + " - " + errorThrown);
+      }
+    });
+  }
+
 })(jQuery); // End of use strict

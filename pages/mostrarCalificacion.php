@@ -2,19 +2,6 @@
 include_once "../server/zona_priv.php"; ?>
 <?php include_once('../modelos/gestion.bd.php'); ?>
 <?php include_once('../modelos/calificaciones.php');
-// echo "<pre>";
-
-
-// $objeto = new Calificaciones();
-// $consulta = $objeto->readCalificaciones();
-// $rep =[];
-// while ($dat = mysqli_fetch_assoc($consulta)){
-//     $rep =$dat;
-
-// }
-// var_dump($rep);
-// echo "</pre>";
-// return;
 
 ?>
 
@@ -119,20 +106,31 @@ include_once "../server/zona_priv.php"; ?>
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form id="formcalificacion" method="POST" >
+                            <form id="formcalificacion" method="POST">
                                 <div class="modal-body">
 
                                     <div class="form-group">
                                         <label for="Asignatura_idAsignatura" class="col-form-label">Asignatura:</label>
-                                        <input type="text" class="form-control" id="Asignatura_idAsignatura" name="Asignatura_idAsignatura">
+                                        <select id="Calificacion_Asignatura" class="form-control" name="Asignatura_idAsignatura">
+                                            <option value="0" >-- Seleccione --</option>
+
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="Docente_idDocente" class="col-form-label">Docente:</label>
-                                        <input type="text" class="form-control" id="Docente_idDocente" name="Docente_idDocente">
+                                        <select id="Calificacion_Docente"  class="form-control" name="Docente_idDocente">
+                                            <option value="0"> -- Seleccione --</option>
+    
+                                        </select>
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="Estudiantes_idEstudiantes" class="col-form-label">Estudiante:</label>
-                                        <input type="text" class="form-control" id="Estudiantes_idEstudiantes" name="Estudiantes_idEstudiantes">
+                                        <select id="Calificacion_Estudiante" class="form-control" name="Estudiantes_idEstudiantes">
+                                            <option value="0" >-- Seleccione --</option>
+    
+                                        </select>
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="AnioLectivo" class="col-form-label">Año Lectivo:</label>
