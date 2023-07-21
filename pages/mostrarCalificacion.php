@@ -119,7 +119,7 @@ include_once "../server/zona_priv.php"; ?>
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form id="formcalificacion" method="POST" action="mostrarCalificacion.php">
+                            <form id="formcalificacion" method="POST" >
                                 <div class="modal-body">
 
                                     <div class="form-group">

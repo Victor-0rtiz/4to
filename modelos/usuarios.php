@@ -13,8 +13,8 @@ class usuarios
         $this->objeto = new conexion();
     }
 
-    public function createUsuario($id,$Pnombre, $Papellido, $usuario, $contrasena, $celular, $fechanac, $tipo){
-        return $this->objeto->consultar("insert into Usuario(Pnombre, Papellido, Usuario, contra, celular, fechanac, tipo) values ('$id','$Pnombre', '$Papellido', '$usuario', '$contrasena','$celular', '$fechanac', '$tipo');");
+    public function createUsuario($Pnombre, $Papellido, $usuario, $contrasena, $fechanac, $celular, $tipo){
+        return $this->objeto->consultar("insert into Usuario(Pnombre, Papellido, Usuario, Contra, fecha_nacimiento, Celular, Tipo_usuario) values ('$Pnombre', '$Papellido', '$usuario', '$contrasena', '$fechanac','$celular', '$tipo');");
     
     }
     

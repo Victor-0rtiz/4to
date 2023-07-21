@@ -11,6 +11,51 @@
   });
 
 
+  $("#formUsuario").submit(function (event) {
+    // Prevenir el comportamiento predeterminado del formulario (no se recargará la página)
+    event.preventDefault();
+
+    // Obtener los valores de los campos del formulario
+    const nombre = $("#nombreuser").val();
+    const apellido = $("#apellidouser").val();
+    const usuario = $("#Usuariouser").val();
+    const contra = $("#Contrauser").val();
+    const fechaNacimiento = $("#fecha_nacimientouser").val();
+    const celular = $("#Celularuser").val();
+    const tipoUsuario = $("#Tipo_usuariouser").val();
+
+    // Crear un objeto con los datos que enviarás al endpoint
+    const datosUsuario = {
+      Pnombre: nombre,
+      Papellido: apellido,
+      Usuario: usuario,
+      Contra: contra,
+      fecha_nacimiento: fechaNacimiento,
+      Celular: celular,
+      Tipo_usuario: tipoUsuario
+    };
+
+    // Enviar los datos utilizando Ajax
+    $.ajax({
+      type: "POST",
+      url: "server/gestion_nuevoUsuario.php", // Reemplaza esto por la URL de tu endpoint
+      data: datosUsuario,
+      success: function (response) {
+        const respuesta = JSON.parse(response)
+        if (response) {
+
+          location.reload();
+
+        }
+      },
+      error: function (error) {
+        // Manejar el error en caso de que falle la solicitud Ajax
+        console.log("Error:", error);
+      }
+    });
+  });
+
+
   $(".editarBtn").click(function () {
     const idUsuario = $(this).data("id");
 

@@ -98,35 +98,35 @@ include_once "modelos/usuarios.php";
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form id="formUsuario" method="POST" action="index.php">
+                            <form id="formUsuario" method="POST" >
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label for="nombre" class="col-form-label">Nombre:</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre">
+                                        <label for="nombreuser" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombreuser" name="nombreuser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="apellido" class="col-form-label">Apellido:</label>
-                                        <input type="text" class="form-control" id="apellido" name="apellido">
+                                        <label for="apellidouser" class="col-form-label">Apellido:</label>
+                                        <input type="text" class="form-control" id="apellidouser" name="apellidouser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Usuario" class="col-form-label">Usuario:</label>
-                                        <input type="text" class="form-control" id="Usuario" name="usuario">
+                                        <label for="Usuariouser" class="col-form-label">Usuario:</label>
+                                        <input type="text" class="form-control" id="Usuariouser" name="usuariouser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Contra" class="col-form-label">Contraseña:</label>
-                                        <input type="password" class="form-control" id="Contra" name="contra">
+                                        <label for="Contrauser" class="col-form-label">Contraseña:</label>
+                                        <input type="password" class="form-control" id="Contrauser" name="contrauser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="fecha_nacimiento" class="col-form-label">Fecha de Nacimiento:</label>
-                                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+                                        <label for="fecha_nacimientouser" class="col-form-label">Fecha de Nacimiento:</label>
+                                        <input type="date" class="form-control" id="fecha_nacimientouser" name="fecha_nacimientouser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Celular" class="col-form-label">Celular:</label>
-                                        <input type="text" class="form-control" id="Celular" name="celular">
+                                        <label for="Celularuser" class="col-form-label">Celular:</label>
+                                        <input type="text" class="form-control" id="Celularuser" name="celularuser">
                                     </div>
                                     <div class="form-group">
-                                        <label for="Tipo_usuario" class="col-form-label">Tipo de Usuario:</label>
-                                        <input type="text" class="form-control" id="Tipo_usuario" name="tipo_usuario">
+                                        <label for="Tipo_usuariouser" class="col-form-label">Tipo de Usuario:</label>
+                                        <input type="text" class="form-control" id="Tipo_usuariouser" name="tipo_usuariouser">
                                     </div>
                                 </div>
                                 <div class="modal-footer">

@@ -2,7 +2,7 @@
 
 include_once "../modelos/usuarios.php";
 
-if(isset($_POST['Pnombre']) && isset($_POST['Papellido']) && isset($_POST['Usuario']) && isset($_POST['Contra']) && isset($_POST['fecha_nacimiento']) && isset($_POST['Celular']) && isset($_POST['Tipo_usuario'])){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $objeto = new Usuarios();
 
@@ -15,11 +15,13 @@ if(isset($_POST['Pnombre']) && isset($_POST['Papellido']) && isset($_POST['Usuar
     $Tipo_usuario = $_POST['Tipo_usuario'];
 
     if($objeto->createUsuario($Pnombre, $Papellido, $Usuario, $Contra, $fecha_nacimiento, $Celular, $Tipo_usuario)){
-        $ok = "1";
-        header("Location: /index.php?variable=$ok");
+        $respuesta= ["respuesta"=> true];
+        echo json_encode($respuesta);
+        return;
     }else{
-        $notok = "2";
-        header("Location: /index.php?variable=$notok");
+        $respuesta= ["respuesta"=> false];
+        echo json_encode($respuesta);
+        return;
     }
 
 }
